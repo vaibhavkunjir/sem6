@@ -1,0 +1,16 @@
+name: Test Self-Hosted Runner
+
+on: [push]
+
+jobs:
+  check-tools:
+    runs-on: self-hosted
+    steps:
+    - name: Check Docker version
+      run: docker --version
+
+    - name: Check Maven version
+      run: mvn -version
+
+    - name: Check Google Chrome version
+      run: google-chrome --version
